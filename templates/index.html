@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>~Tweet Tweet~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+<div class="wrapper">
+  <nav class="navbar navbar-default">
+    <a class="navbar-brand">What is the Sentiment on Twitter Today?
+      <img class="nav-tweet" src="static/images/twitter.svg">
+    </a>
+  </nav>
+  <div class="hero text-center">
+  </div>
+  <div class="container">
+    <div class="row margin-top-30">
+      <div class="col-md-2">
+          <form>
+            <!-- THE BUTTON TO CALL THE FLASK / SCRAPE -->
+            <p> <a id="filter-btn" type="button" class="btn btn-default" role="button" href="/scrape">Refresh Tweets</a></p>
+          </form>
+      </div>
+      <div class="col-md-10">
+        <div id="table-area">
+          <table id="ufo-table" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table-head">Twitter User</th>
+                <th class="table-head">Most Recent Tweet</th>
+                <th class="table-head">Sentiment</th>
+              </tr>
+              <tr>
+                <td> <img src="static/images/DT_twitter.PNG" alt="Twitter User: Donald Trump" width="200"height="60"></td>
+                <td>{{twitter_info.url1}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/BO_twitter.PNG" alt="Twitter User: Barack Obama" width="200"height="60"></td>
+                <td>{{twitter_info.url2}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/JK_twitter.PNG" alt="Twitter User: Jimmy Kimmel" width="200"height="60"></td>
+                <td>{{twitter_info.url3}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/OW_twitter.PNG" alt="Twitter User: Oprah" width="200"height="60"></td>
+                <td>{{twitter_info.url4}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/ATL_twitter.PNG" alt="Twitter User: ATL News" width="200"height="60"></td>
+                <td>{{twitter_info.url5}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/EM_twitter.PNG" alt="Twitter User: Elon Musk" width="200"height="60"></td>
+                <td>{{twitter_info.url6}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/CB_twitter.PNG" alt="Twitter User: Cardi B" width="200"height="60"></td>
+                <td>{{twitter_info.url7}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+              <tr>
+                <td> <img src="static/images/MR_twitter.PNG" alt="Twitter User: Matt Ryan" width="200"height="60"></td>
+                <td>{{twitter_info.url8}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+                </tr>
+              <tr>
+                <td> <img src="static/images/KK_twitter.PNG" alt="Twitter User: Kim K" width="200"height="60"></td>
+                <td>{{twitter_info.url9}}</td>
+                <td>ENTER SENTIMENT PIC HERE</td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+<!-- <script src="static/js/data.js"></script> -->
+<script src="static/js/app.js"></script>
+</body>
+
+</html>
