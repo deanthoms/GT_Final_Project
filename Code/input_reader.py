@@ -28,54 +28,54 @@ ignore_words = {}
 accepted_words = {}
 
 def get_tokens(text):
-    # text to tokens
-    tokens = tknzr.tokenize(text)
-    # remove punctuations, words to lower case
-    alpha_tokens = [w.lower() for w in tokens if w.isalpha()]
-    # do not use stop words
-    ns_tokens = [w for w in alpha_tokens if not w in stop_words]
-    # stemming
-    st_tokens = [porter.stem(t) for t in ns_tokens]
-    # only words in dictionary
+	# text to tokens
+	tokens = tknzr.tokenize(text)
+	# remove punctuations, words to lower case
+	alpha_tokens = [w.lower() for w in tokens if w.isalpha()]
+	# do not use stop words
+	ns_tokens = [w for w in alpha_tokens if not w in stop_words]
+	# stemming
+	st_tokens = [porter.stem(t) for t in ns_tokens]
+	# only words in dictionary
     
-    ow = []
-    for w in ns_tokens:
+	ow = []
+	for w in ns_tokens:
 		# remove numbers
-		w = w(None, '0123456789')
-        if(w in ignore_words):
-            continue;
-        # 1) word as is
-        if(w in accepted_words):
-            ow.append(w)
-            continue;
-        if(w in engl_words):
-            ow.append(w)
-            accepted_words[w] = True;
-            continue
-        # 2) stemmed word
-        sw = porter.stem(w)
-        if(sw in accepted_words):
-            ow.append(sw)
-            continue;
-        if(sw in engl_words):
-            ow.append(sw)
-            accepted_words[sw] = True;
-            continue
-        # 3) singular word
-        sw = singularize(w)
-        if(sw in accepted_words):
-            ow.append(sw)
-            continue;
-        if(sw in engl_words):
-            ow.append(sw)
-            accepted_words[sw] = True;
-            continue
+		w = ''.join([i for i in w if not i.isdigit()])
+		if(w in ignore_words):
+			continue;
+		# 1) word as is
+		if(w in accepted_words):
+			ow.append(w)
+			continue;
+		if(w in engl_words):
+			ow.append(w)
+			accepted_words[w] = True;
+			continue
+		# 2) stemmed word
+		sw = porter.stem(w)
+		if(sw in accepted_words):
+			ow.append(sw)
+			continue;
+		if(sw in engl_words):
+			ow.append(sw)
+			accepted_words[sw] = True;
+			continue
+		# 3) singular word
+		sw = singularize(w)
+		if(sw in accepted_words):
+			ow.append(sw)
+			continue;
+		if(sw in engl_words):
+			ow.append(sw)
+			accepted_words[sw] = True;
+			continue
 #        rw = suggest(w)[0]
 #        if(rw[1] > 0.5):
 #            ow.append(w)
 #            accepted_words[w] = True;
 #            continue
-        ignore_words[w] = True
-    return ow
+		ignore_words[w] = True
+	return ow
 	
 	
