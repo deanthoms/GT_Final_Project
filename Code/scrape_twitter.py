@@ -45,10 +45,8 @@ def scrape():
 		# Loop through requested accounts urls and scrape each for most recent tweet
 		for account in account_list:
 	
-			url = f"https://twitter.com/{account}"
-		
 			#for url in url_list:
-			browser.visit(url)
+			browser.visit(f"https://twitter.com/{account}")
 
 			# Create BeautifulSoup object; parse with 'html.parser'
 			soup = bs(browser.html, 'html.parser')

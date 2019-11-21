@@ -16,28 +16,19 @@ body {
 }
 
 .nav-tweet {
-  position: absolute;
+  /* position: absolute; */
   bottom: 10px;
-  left: 365px;
-  width: 35px;
+  /* left: 365px; */
+  width: 70px;
   color: white;
+  display: inline;
 }
-
-#table-area th {
-  text-align: center;
-  font-size: 30px;
-}
-
-#table-area td {
-  text-align: left;
-}
-
 .margin-top-30 {
   margin-top: 30px;
 }
 
 .hero {
-  height: 440px;
+  height: 360px;
   background-image: url("../images/twitter.png");
   background-attachment: fixed;
   background-position: bottom center;
@@ -47,4 +38,14 @@ body {
 .account-img{
 	height: 60px;
 	width: 200px;
+}
+
+#tweettbl td{
+	font-size: 16px;
+	text-align: left;
+}
+
+#tweettbl th {
+  text-align: center;
+  font-size: 30px;
 }
