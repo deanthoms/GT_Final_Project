@@ -26,11 +26,10 @@ body {
 #table-area th {
   text-align: center;
   font-size: 30px;
-
 }
 
 #table-area td {
-  text-align: center;
+  text-align: left;
 }
 
 .margin-top-30 {
@@ -43,4 +42,9 @@ body {
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
+}
+
+.account-img{
+	height: 60px;
+	width: 200px;
 }
