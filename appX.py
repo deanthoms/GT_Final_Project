@@ -20,7 +20,7 @@ from keras.models import load_model
 
 # user modules
 import sys
-sys.path.insert(0, './Code')
+sys.path.insert(0,  os.path.join('.', 'Code'))
 import input_reader
 import scrape_twitter
 
