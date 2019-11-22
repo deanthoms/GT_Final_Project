@@ -6,14 +6,14 @@ There are many ways to build a model to predict binary sentiment categories by g
 1.	Where do we get our test and training data?
 2.	Do we have a balanced data? 
 3.	What are our features: all words? Top occurring terms?
-4.	How we captures those feature?
-5.	What application can we use the model for?
+4.	How do we capture those feature?
+5.	What application(s) can we use the model for?
 
 * Datasets
 https://www.kaggle.com/c/twitter-sentiment-analysis2/data
 
 * Results:
-The data scrapped from the latest twitter from 10 politicians, celebrities. The model evaluates and predict the twits to positive or negative categories. 
+The data scraps from the latest twitter from 10 politicians, celebrities. The model evaluates and predicts the twits to positive or negative categories. 
 
 ![ML models Comparison](images/ml_model_comparison.JPG)
 ![Classification Report Output](images/output.JPG)
