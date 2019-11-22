@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import input_reader
-import scrape_twitter
+#import scrape_twitter
 import os
 import numpy as np
 
@@ -19,32 +19,31 @@ import numpy as np
 # model.compile(loss = 'sparse_categorical_crossentropy', optimizer='adam', metrics = ['accuracy'])
 # model_file = os.path.join('Output', 'tweets1_model.h5')
 # model.load_weights(model_file)
-from keras.models import load_model
-model = load_model('Output/tweets1_model.h5')
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-
+#from keras.models import load_model
+#model = load_model('Output/tweets1_model.h5')
+#from keras.preprocessing.text import Tokenizer
+#from keras.preprocessing.sequence import pad_sequences
 
 # Sections that pull in libraries for get tokens
-from nltk.tokenize import TweetTokenizer
-from nltk.corpus import stopwords
-from nltk.corpus import words as nltk_words
-from nltk.stem.porter import PorterStemmer
-from pattern.en import suggest, singularize
+#from nltk.tokenize import TweetTokenizer
+#from nltk.corpus import stopwords
+#from nltk.corpus import words as nltk_words
+#from nltk.stem.porter import PorterStemmer
+#from pattern.en import suggest, singularize
 
-stop_words = stopwords.words('english')
+#stop_words = stopwords.words('english')
 
 # words into dictionary for fast lookup
-engl_words = dict.fromkeys(nltk_words.words(), None)
+#engl_words = dict.fromkeys(nltk_words.words(), None)
 
 #initializes porter
-porter = PorterStemmer()
+#porter = PorterStemmer()
 
 # use strip handle (tweeter) and reduce lenght (haaalooooo -> haaloo)
-tknzr = TweetTokenizer(strip_handles=True, reduce_len=True)
+#tknzr = TweetTokenizer(strip_handles=True, reduce_len=True)
 
-ignore_words = {}
-accepted_words = {}
+#ignore_words = {}
+#accepted_words = {}
 
 app = Flask(__name__)
 
@@ -59,18 +58,20 @@ def index():
     clean_tweet_list = []
     for key, value in twitter_info.items():
 
+        print(key)
+        print(value)
         
         ######## MARTIN TAKE A LOOK HERE #####################
-        max_fatures = 2000
+#        max_fatures = 2000
 
-        tokenizer = Tokenizer(num_words=max_fatures, split=" ")
-        tokenizer.fit_on_texts(value) #NEED TO ENSURE THIS LIBRARY IS BEING FED THE CORRECT INPUT
+#        tokenizer = Tokenizer(num_words=max_fatures, split=" ")
+#        tokenizer.fit_on_texts(value) #NEED TO ENSURE THIS LIBRARY IS BEING FED THE CORRECT INPUT
 
         #making sequences:
-        X = tokenizer.texts_to_sequences(value) #NEED TO ENSURE THIS LIBRARY IS BEING FED THE CORRECT INPUT
-        X = pad_sequences(X)
+#        X = tokenizer.texts_to_sequences(value) #NEED TO ENSURE THIS LIBRARY IS BEING FED THE CORRECT INPUT
+#        X = pad_sequences(X)
        
-        clean_tweet_list.append(((model.predict(X))))
+#        clean_tweet_list.append(((model.predict(X))))
 
         ######## MARTIN LOOK ABOVE THIS LINE #####################
 
